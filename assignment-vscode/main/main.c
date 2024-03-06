@@ -3,7 +3,14 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 
-#define TIMING_FACTOR 1000
+// DEBUG
+#ifdef DEBUG
+  #define TIMING_FACTOR 1000
+// PRODUCTION
+#else
+  #define TIMING_FACTOR 1
+#endif
+
 #define PB1_GPIO_NUM 1
 #define PB2_GPIO_NUM 2
 #define LED1_GPIO_NUM 18
